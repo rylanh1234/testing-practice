@@ -55,3 +55,5 @@ function analyzeArray(array) {
     const max = Math.max(...array);
     return { average, min, max, length };
 }
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
