@@ -29,18 +29,24 @@ function caesarCipher(string, shift) {
     const chars = string.split("");
     for (let i = 0; i < chars.length; i++) {
         if (alphabeticalLower.includes(chars[i])) {
-            const shiftedIdx = alphabeticalLower.indexOf(chars[i]) + shift;
-            while (shiftedIdx > 26) {
+            let shiftedIdx = alphabeticalLower.indexOf(chars[i]) + shift;
+            while (shiftedIdx > 25) {
                 shiftedIdx -= 26;
+            }
+            while (shiftedIdx < 0) {
+                shiftedIdx += 26;
             }
             chars[i] = alphabeticalLower.charAt(shiftedIdx);
         }
     }
     for (let i = 0; i < chars.length; i++) {
         if (alphabeticalUpper.includes(chars[i])) {
-            const shiftedIdx = alphabeticalUpper.indexOf(chars[i]) + shift;
-            while (shiftedIdx > 26) {
+            let shiftedIdx = alphabeticalUpper.indexOf(chars[i]) + shift;
+            while (shiftedIdx > 25) {
                 shiftedIdx -= 26;
+            }
+            while (shiftedIdx < 0) {
+                shiftedIdx += 26;
             }
             chars[i] = alphabeticalUpper.charAt(shiftedIdx);
         }

@@ -50,3 +50,38 @@ describe("calculator", () => {
         expect(testCalculator.divide(42, 7)).toEqual(6);
     });
 });
+
+describe("caesarCipher", () => {
+    test.skip("shifts single string", () => {
+        expect(caesarCipher("abc", 3)).toEqual("def");
+    });
+    test.skip("no shift", () => {
+        expect(caesarCipher("abc", 0)).toEqual("abc");
+    });
+    test.skip("shifts single string by negative integer", () => {
+        expect(caesarCipher("def", -3)).toEqual("abc");
+    });
+    test.skip("shift wraps", () => {
+        expect(caesarCipher("xyz", 3)).toEqual("abc");
+    });
+    test.skip("shifts single string by negative integer and wraps", () => {
+        expect(caesarCipher("def", -6)).toEqual("xyz");
+    });
+    test.skip("preserves lettercase", () => {
+        expect(caesarCipher("HeLLo", 3)).toEqual("KhOOr");
+    });
+    test.skip("punctuation, spaces, non-alphabetical preserved", () => {
+        expect(caesarCipher("Hello, World!", 3)).toEqual("Khoor, Zruog!");
+    });
+});
+
+describe("analyzeArray", () => {
+    test("finds ave, min, max, and length", () => {
+        const object = analyzeArray([1,8,3,4,2,6]);
+        expect(object.average).toEqual(4);
+        expect(object.min).toEqual(1);
+        expect(object.max).toEqual(8);
+        expect(object.length).toEqual(6);
+        // expect(object).toMatchObject({ average: 4, min: 1, max: 8, length: 6 });
+    });
+});
